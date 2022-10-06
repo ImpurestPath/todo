@@ -1,3 +1,5 @@
+package com.example.demo;
+
 import java.util.Objects;
 
 public class TodoItem {
@@ -29,7 +31,7 @@ public class TodoItem {
 
     @Override
     public String toString() {
-        return "TodoItem{" +
+        return "com.example.demo.TodoItem{" +
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", done=" + done +
