@@ -18,8 +18,10 @@ public class DemoApplication implements CommandLineRunner {
 	JDBCTodoRepository repository;
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		JDBCTodoRepository jdbcTodoRepository = new JDBCTodoRepository();
 
+		SpringApplication.run(DemoApplication.class, args);
+		jdbcTodoRepository.add(new TodoItem("Jeta", "Black",false));;
 
 
 //		HashMapTodoRepository repozitory = new HashMapTodoRepository();
@@ -45,8 +47,9 @@ public class DemoApplication implements CommandLineRunner {
 	}
 
 	@Override
-	public void run(String... args) throws Exception {
+	public void run(String... args) throws Exception, NullPointerException {
 		logger.info("start");
 		repository.getAll().forEach(todoItem -> logger.info(todoItem.toString()));
+		logger.info(repository.get("'Implement methods").toString());
 	}
 }
