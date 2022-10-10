@@ -39,7 +39,7 @@ public class JDBCTodoRepository implements ITodoRepository {
 
     @Override
     public void add(TodoItem todoitem) {
-        jdbcTemplate.update("INSERT INTO todo ((id, name,description, done) values(?,?,?)", todoitem.name, todoitem.description, todoitem.done);
+        jdbcTemplate.update("INSERT INTO todo (name,description, done) values(?,?,?)", todoitem.name, todoitem.description, todoitem.done);
 
 
     }
@@ -48,11 +48,11 @@ public class JDBCTodoRepository implements ITodoRepository {
     public void update(TodoItem todoitem) {
         /*      jdbcTemplate.update("INSERT INTO todo ((id, name,description, done) values(?,?,?)", todoitem.name,todoitem.description,todoitem.done);
          */
-        jdbcTemplate.update("update todo set name = todoitem.name, description= todoitem.description, done=todoitem.done where name = todoitem.name");
+        jdbcTemplate.update("update todo set name = ?, description= ?, done=? where name = ?", todoitem.name, todoitem.description, todoitem.done, todoitem.name);
     }
 
     @Override
     public void delete(String nameTodoItem) {
-        jdbcTemplate.update("delete from todo where name =nameTodoItem");
+        jdbcTemplate.update("delete from todo where name = ?", nameTodoItem);
     }
 }
