@@ -9,13 +9,13 @@ public class Main {
 
         HashMapTodoRepository repozitory = new HashMapTodoRepository();
 
-        repozitory.add(new TodoItem("Jet", "Yelow",false));
-        repozitory.add(new TodoItem("Jeta", "Black",false));
-        repozitory.add(new TodoItem("Jeta55", "Read",false));
+//        repozitory.add(new TodoItem("Jet", "Yelow",false));
+//        repozitory.add(new TodoItem("Jeta", "Black",false));
+//        repozitory.add(new TodoItem("Jeta55", "Read",false));
 
         System.out.println(repozitory.toString());
 
-        repozitory.update(new TodoItem("Jeta55", "Green",true));
+//        repozitory.update(new TodoItem("Jeta55", "Green",true));
 
         System.out.println(repozitory.toString());
 
