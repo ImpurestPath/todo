@@ -1,16 +1,18 @@
 package com.example.demo;
 
 import java.util.Objects;
+import java.util.UUID;
 
 public class TodoItem {
 
-
+    UUID id;
     String name;
     String description;
     Boolean done;
 
 
-    public TodoItem(String name, String description, Boolean done) {
+    public TodoItem(UUID id, String name, String description, Boolean done) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.done = done;
